@@ -93,26 +93,6 @@ button {
   border: none;
 }
 
-/* .back-video{
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-@media (min-aspect-ratio: 16/9){
-  .back-video{
-    width: 100%;
-    height: auto;
-  }
-}
-
-@media (max-aspect-ratio: 16/9){
-  .back-video{
-    width: auto;
-    height: 100%;
-  }
-} */
 /*=============== THEME ===============*/
 .change-theme{
   font-size: 1.25rem;
@@ -126,13 +106,44 @@ button {
 }
 
 /*========== Variables Dark theme ==========*/
-
+body.dark-theme{
+  --first-color: hsl(228, 66%, 62%);
+  --second-color: hsl(25, 57%, 54%);
+  --title-color: hsl(228, 8%, 95%);
+  --text-color: hsl(228, 8%, 70%);
+  --border-color: hsl(228, 16%, 14%);
+  --body-color: hsl(228, 12%, 8%);
+  --container-color: hsl(228, 16%, 12%);
+}
 
 /*========== 
     Color changes in some parts of 
     the website, in dark theme 
 ==========*/
 
+.dark-theme .swiper-button-next,
+.dark-theme .swiper-button-prev{
+  border: 3px solid var(--border-color) ;
+}
+
+.dark-theme .nav__menu,
+.dark-theme .home__img,
+.dark-theme .services__card:hover,
+.dark-theme .scrollup{
+  box-shadow: none;
+}
+
+.dark-theme::-webkit-scrollbar{
+  background-color: hsl(228, 4%, 15%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb{
+  background-color: hsl(228, 4%, 25%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(228, 4%, 35%);
+}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -290,8 +301,10 @@ button {
 }
 
 .home__orbe{
-  width: 465px;
-  height: 484px;
+  /* width: 465px;
+  height: 484px; */
+  width: 265px;
+  height: 284px;
   background:linear-gradient(180deg,
               hsl(0, 0%, 16%) 93%,
               hsl(0, 0%, 67%) 100%);
@@ -300,8 +313,10 @@ button {
 
 .home__img{
   position: absolute;
-  width: 450px;
-  height: 500px;
+  /* width: 450px;
+  height: 500px; */
+  width: 250px;
+  height: 300px;
   overflow: hidden;
   border-radius: 125px 125px 12px 12px;
   display: inline-flex;
@@ -549,12 +564,221 @@ button {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 350px){
+  .container{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 
+  .section{
+    padding: 3.5rem 0 1rem;
+  }
+
+  .home{
+    padding-bottom: 0;
+  }
+  
+}
+
+@media screen and (max-width: 320px){
+  .nav__menu{
+    padding: 1.3rem 1.5rem;
+  }
+
+  .home__img{
+    width: 220px;
+    height: 280px;
+  }
+
+  .home__orbe{
+    width: 240px;
+    height: 264px;
+  }
+
+  .services__card{
+    width: 230px;
+    padding: .5rem .5rem .75rem;
+  }
+
+  .footer__content{
+    gap: 2.5rem;
+  }
+}
 
 /* For medium devices */
+@media screen and (min-width: 576px){
+  .nav__menu{
+    width: 342px;
+  }
 
+  .footer__content{
+    grid-template-columns: repeat(3, max-content);
+  }
+}
+
+@media screen and (min-width: 767px){
+  .home__container{
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 2rem;
+  }
+
+  .home__orbe{
+    align-self: flex-end;
+  }
+
+  .home__data{
+    padding-bottom: 2rem;
+  }
+}
 
 /* For large devices */
+@media screen and (min-width: 1023px){
+  .section{
+    padding: 7.5rem 0 1rem;
+  }
 
+  .section__title{
+    font-size: 2.25rem;
+  }
+
+  .section__subtitle{
+    font-size: var(--normal-font-size);
+  }
+
+  .nav{
+    height: calc(var(--header-height) + 1.5rem);
+  }
+
+  .nav__menu{
+    width: initial;
+    margin-left: auto;
+  }
+
+  .nav__list{
+    display: flex;
+    column-gap: 3rem;
+  }
+
+  .nav__link{
+    color: var(--text-color-light);
+  }
+
+  .nav__link i{
+    display: none;
+  }
+
+  .active-link{
+    background: none;
+    box-shadow: none;
+    color: var(--first-color);
+    font-weight: var(--font-medium);
+  }
+
+  .change-theme{
+    margin: 0 3rem;
+    color: var(--text-color-light);
+  }
+
+  .scroll-header .nav__link,
+  .scroll-header .change-theme{
+    color: var(--text-color);
+  }
+
+  .scroll-header .active-link{
+    color: var(--first-color);
+  }
+
+  .home{
+    padding-bottom: 0;
+  }
+
+  .home__container{
+    padding-top: 5rem;
+    column-gap: 2rem;
+  }
+
+  .home__data{
+    padding-bottom: 4rem;
+  }
+
+  .home__title{
+    margin-bottom: 2rem;
+  }
+
+  .home__description{
+    margin-bottom: 3rem;
+  }
+
+  .home__orbe{
+    width: 504px;
+    height: 611px;
+    border-radius: 256px 256px 0 0;
+  }
+
+  .home__img{
+    width: 472px;
+    height: 634px;
+    border-radius: 236px 236px 12px 12px;
+    bottom: -2.5rem;
+  }
+
+  .services__container{
+    padding-top: 3rem;
+  }
+
+  .services__card{
+    width: 320px;
+    padding: .75rem .75rem 2rem;
+  }
+
+  .services__data{
+    padding: 0 .25rem 0 .75rem;
+  }
+
+  .footer__content{
+    grid-template-columns: repeat(4, max-content);
+  }
+
+  .footer__title{
+    margin-bottom: 1.5rem;
+  }
+
+  .footer__links{
+    row-gap: 1rem;
+  }
+
+  .footer__info{
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+  }
+
+  .show-scroll{
+    bottom: 3rem;
+    right: 3rem;
+  }
+}
+
+@media screen and (min-width: 1040px){
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home__container{
+    column-gap: 4rem;
+  }
+}
 
 /* For 2K & 4K resolutions */
+@media screen and (min-width: 2048px){
+  body{
+    zoom: 1.5;
+  }
+}
+
+@media screen and (min-width: 3840px){
+  body{
+    zoom: 2;
+  }
+}
