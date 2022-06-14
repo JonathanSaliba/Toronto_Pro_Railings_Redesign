@@ -15,7 +15,7 @@
   --border-color: hsl(228, 99%, 98%);
   --body-color: #fff;
   --container-color: #fff;
-
+  
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: 'Lexend Exa', sans-serif;
@@ -27,6 +27,17 @@
   --small-font-size: .813rem;
   --smaller-font-size: .75rem;
 
+  /*========== Margins Bottom ==========*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+    
   /*========== Font weight ==========*/
   --font-medium: 500;
   --font-semi-bold: 600;
@@ -66,6 +77,13 @@ body {
   background-color: var(--body-color);
   color: var(--text-color);
   transition: .3s; /* For animation dark mode */
+}
+
+html, body{
+  margin: 0%;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
 h1, h2, h3 {
@@ -412,7 +430,45 @@ body.dark-theme{
 
 
 
+/*==================== TESTIMONIAL ====================*/
+.testimonial__data,
+.testimonial__header{
+  display: flex;
+}
 
+.testimonial__data{
+  justify-content: space-between;
+  margin-bottom: var(--mb-1);
+}
+
+.testimonial__img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: var(--mb-0-75);
+}
+
+.testimonial__name{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+
+.testimonial__client{
+  font-size: var(--small-font-size);
+   color: var(--text-color-light);
+}
+
+.testimonial__description{
+  margin-bottom: var(--mb-2-5);
+}
+
+.testimonial__icon-star{
+  color: var(--first-color);
+}
+
+.swiper .mySwiper .swiper-pagination-testimonial{
+  bottom: 0;
+}
 /*=============== POPULAR ===============*/
 
 
@@ -577,6 +633,22 @@ body.dark-theme{
   .home{
     padding-bottom: 0;
   }
+
+  .testimonial__data,
+  .testimonial__header{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial__img{
+    margin-right: 0;
+    margin-bottom: var(--mb-0-25);
+  }
+
+  .testimonial__data,
+  .testimonial__description{
+    text-align: center;
+  }
   
 }
 
@@ -727,12 +799,16 @@ body.dark-theme{
   }
 
   .services__card{
-    width: 320px;
+    width: 360px;
     padding: .75rem .75rem 2rem;
   }
 
   .services__data{
     padding: 0 .25rem 0 .75rem;
+  }
+
+  .swiper-container-horizontal > .swiper-pagination-bullets{
+    bottom: -4.5rem;
   }
 
   .footer__content{
