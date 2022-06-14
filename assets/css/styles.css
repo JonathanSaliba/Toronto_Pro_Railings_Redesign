@@ -3,6 +3,7 @@
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
+  --hue-color: 230;
   /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(228, 66%, 53%);
   --first-color-alt: hsl(228, 66%, 47%);
@@ -15,6 +16,7 @@
   --border-color: hsl(228, 99%, 98%);
   --body-color: #fff;
   --container-color: #fff;
+  --input-color: hsl(var(--hue-color), 70%, 96%);
   
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -37,7 +39,7 @@
     --mb-2: 2rem;
     --mb-2-5: 2.5rem;
     --mb-3: 3rem;
-    
+
   /*========== Font weight ==========*/
   --font-medium: 500;
   --font-semi-bold: 600;
@@ -79,12 +81,6 @@ body {
   transition: .3s; /* For animation dark mode */
 }
 
-html, body{
-  margin: 0%;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-}
 
 h1, h2, h3 {
   color: var(--title-color);
@@ -132,6 +128,7 @@ body.dark-theme{
   --border-color: hsl(228, 16%, 14%);
   --body-color: hsl(228, 12%, 8%);
   --container-color: hsl(228, 16%, 12%);
+  --input-color: hsl(var(--hue-color), 29%, 16%);
 }
 
 /*========== 
@@ -172,6 +169,7 @@ body.dark-theme{
 
 .grid {
   display: grid;
+  gap: 1.5rem;
 }
 
 .section {
@@ -359,6 +357,17 @@ body.dark-theme{
   cursor: pointer;          
 }
 
+.button__icon{
+  font-size: 1.25rem;
+  margin-left: var(--mb-0-5);
+  transition: .3s;
+}
+
+.button--flex{
+  display: inline-flex;
+  align-items: center;
+}
+
 .button:hover{
   box-shadow: 0 4px 8px hsla(228, 66%, 45%, .25);
 }
@@ -468,6 +477,53 @@ body.dark-theme{
 
 .swiper .mySwiper .swiper-pagination-testimonial{
   bottom: 0;
+}
+
+/*==================== CONTACT ME ====================*/
+.contact__container{
+  row-gap: 3rem;
+}
+
+.contact__information{
+  display: flex;
+  margin-bottom: var(--mb-2);
+}
+
+.contact__icon{
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-right: var(--mb-0-75);
+}
+
+.contact__title{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+
+.contact__subtitle{
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.contact__content{
+  background-color: var(--input-color);
+  border-radius: .5rem;
+  padding: .75rem 1rem .25rem;
+}
+
+.contact__label{
+  font-size: var(--smaller-font-size);
+  color: var(--title-color);
+}
+
+.contact__input{
+  width: 100%;
+  background-color: var(--input-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  border: none;
+  outline: none;
+  padding: .25rem .5rem .5rem 0;
 }
 /*=============== POPULAR ===============*/
 
@@ -686,6 +742,10 @@ body.dark-theme{
   .footer__content{
     grid-template-columns: repeat(3, max-content);
   }
+
+  .contact__container{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (min-width: 767px){
@@ -809,6 +869,14 @@ body.dark-theme{
 
   .swiper-container-horizontal > .swiper-pagination-bullets{
     bottom: -4.5rem;
+  }
+
+  .contact__form{
+    width: 460px;
+  }
+
+  .contact__inputs{
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .footer__content{
