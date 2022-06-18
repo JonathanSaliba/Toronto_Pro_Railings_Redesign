@@ -167,30 +167,6 @@ body.dark-theme{
   background-color: hsl(228, 4%, 35%);
 }
 
-.dark-theme .nav__logo{
-  display: inline-flex;
-  align-items: center;
-  column-gap: .25rem;
-  background-image: url(../img/darklogo.png);
-  transition: .3s;
-}
-
-.dark-theme .nav__logo img{
-  width: 8rem;
-}
-
-.dark-theme .footer__logo{
-  display: inline-flex;
-  background-image: url(../img/darklogo.png);
-  align-items: center;
-  column-gap: .25rem;
-  margin-bottom: .75rem;
-}
-
-.dark-theme .footer__logo img{
-  width: 8rem;
-}
-
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1024px;
