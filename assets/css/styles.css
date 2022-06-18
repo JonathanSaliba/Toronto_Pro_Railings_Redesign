@@ -123,6 +123,7 @@ button {
 body.dark-theme{
   --first-color: hsl(228, 66%, 62%);
   --second-color: hsl(25, 57%, 54%);
+  --third-color: hsl(43, 67%, 56%);
   --title-color: hsl(228, 8%, 95%);
   --text-color: hsl(228, 8%, 70%);
   --border-color: hsl(228, 16%, 14%);
@@ -139,6 +140,12 @@ body.dark-theme{
 .dark-theme .swiper-button-next,
 .dark-theme .swiper-button-prev{
   border: 3px solid var(--border-color) ;
+}
+
+.dark-theme .button{
+  background:linear-gradient(
+            hsl(43, 67%, 56%),
+            hsl(43, 66%, 47%));
 }
 
 .dark-theme .nav__menu,
@@ -160,17 +167,29 @@ body.dark-theme{
   background-color: hsl(228, 4%, 35%);
 }
 
-/* .dark-theme .nav__logo{
+.dark-theme .nav__logo{
   display: inline-flex;
   align-items: center;
   column-gap: .25rem;
-  background-image: url(assets/img/darklogo.png);
+  background-image: url(../img/darklogo.png);
   transition: .3s;
 }
 
 .dark-theme .nav__logo img{
   width: 8rem;
-} */
+}
+
+.dark-theme .footer__logo{
+  display: inline-flex;
+  background-image: url(../img/darklogo.png);
+  align-items: center;
+  column-gap: .25rem;
+  margin-bottom: .75rem;
+}
+
+.dark-theme .footer__logo img{
+  width: 8rem;
+}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -523,6 +542,14 @@ button:hover
 .btn.active{
     outline: 0px !important;
     box-shadow: none !important;
+}
+
+.button-group{
+  padding: 2rem;
+}
+
+.button-gallary{
+  color: var(--third-color);
 }
  
 

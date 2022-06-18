@@ -118,10 +118,22 @@ themeButton.addEventListener('click', () => {
     // Add or remove the dark / icon theme
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
+    toggleLogos()
     // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+function toggleLogos() {
+    const darkMode = getCurrentTheme() === 'dark'
+    const source = darkMode ? "assets/img/darklogo.png" : "assets/img/lightlogo.png"
+    console.log('darkMode', darkMode)
+    console.log('source', source)
+    var logos = document.getElementsByClassName("logo");
+    for (let i = 0; i < logos.length; i++) {
+         logos[i].src = source;
+    }
+}
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
